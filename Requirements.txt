@@ -1,0 +1,72 @@
+A. Functional Requirements
+These describe what the system should do:
+
+1.Image Input
+-Users can upload a food image via a web interface (Streamlit / web app).
+-Support for common image formats: JPG, PNG, BMP.
+
+2. Food Recognition
+-Automatically identify the food type in the image using a pre-trained or custom deep learning model.
+-Support multiple categories (e.g., pizza, burger, salad, apple, etc.).
+
+3. Calorie Estimation
+-Estimate approximate calories based on food type and portion size.
+-Display calories per serving and optionally macronutrient breakdown (carbs, protein, fat).
+
+4. Results Display
+-Show food label (name), predicted calories, and optionally nutritional info.
+-Provide visual feedback (like confidence score or bounding box if multiple foods are detected).
+
+5. History or Logging (Optional)
+-Save user queries and results for tracking daily intake.
+
+B. Non-Functional Requirements
+These describe how the system performs:
+
+Performance
+-Food recognition should return results within a few seconds.
+-Model accuracy ≥ 85% for main food categories.
+
+2. Usability
+-Simple and intuitive interface for users of all ages.
+-Mobile-friendly web interface.
+
+3. Scalability
+-Able to handle multiple requests concurrently (if deployed online).
+
+4. Reliability
+-Handle incorrect or unclear images gracefully with an error or retry message.
+
+5. Accessibility
+-Include proper labels for images and inputs (for screen readers).
+-Avoid empty labels (important for Streamlit warnings).
+
+3. Technical Requirements
+These describe the tools, libraries, and models you’ll need:
+
+Programming Language
+-Python 3.10 or higher
+
+2. Libraries / Frameworks
+-Deep Learning / Computer Vision: TensorFlow, Keras, PyTorch, OpenCV, PIL
+-Data Handling & Processing: NumPy, Pandas
+-Visualization: Matplotlib, Seaborn
+-Web Interface: Streamlit
+-Image Preprocessing: torchvision.transforms (if PyTorch) or tf.image (if TensorFlow)
+
+3. Pre-trained Models (Optional)
+
+-MobileNet, ResNet, EfficientNet for food classification
+-Transfer learning on a food dataset (e.g., Food-101)
+
+4. Dataset
+-Food images dataset: Food-101, custom images, or other open datasets
+-Calorie/nutritional data: USDA Food Database or other nutrition datasets
+
+5. Hardware
+-GPU recommended for faster model training
+-CPU sufficient for inference on small models
+
+6. Optional Features
+-Portion size estimation using image segmentation
+-Integration with calorie tracking apps
